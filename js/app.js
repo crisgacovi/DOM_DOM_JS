@@ -53,7 +53,7 @@ var GestorEstudiantes = {
             alert('Todos los campos son obligatorios');
         }
     },
-    calcularNotaPromedio: function () {
+    calcularNotaPromedio: function () {if (GestorEstudiantes.estudiantes.length>=1) {
         var sumaNotas = 0.0;
 
         for (var i = 0; i < GestorEstudiantes.estudiantes.length; ++i) {
@@ -61,6 +61,8 @@ var GestorEstudiantes = {
         }
 
         alert("La nota promedio es: " + (sumaNotas / GestorEstudiantes.estudiantes.length).toFixed(2));
+        }else{
+            alert('Registra al menos un estudiante');}
     },
     calcularNotaMayor: function () {
         var indiceNotaMayor = 0;
